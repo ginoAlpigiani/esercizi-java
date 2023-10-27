@@ -15,10 +15,14 @@ public enum MezzoPagamentoEnum
 
     public static MezzoPagamentoEnum dbValueOf(String dbName) throws IllegalArgumentException {
         MezzoPagamentoEnum result = null;
-        for (MezzoPagamentoEnum mezzoPagamentoEnum:MezzoPagamentoEnum.values()) {
-            if (mezzoPagamentoEnum.dbName.equals(dbName)) result = mezzoPagamentoEnum;
+        for (MezzoPagamentoEnum mezzoPagamentoEnum : MezzoPagamentoEnum.values()) {
+            if (mezzoPagamentoEnum.dbName.equals(dbName)) {
+                result = mezzoPagamentoEnum;
+            }
         }
-        if (result == null) throw new IllegalArgumentException("Non esiste un valore "+dbName+" per MezzoPagamentoEnum");
+        if (result == null) {
+            throw new IllegalArgumentException("Non esiste un valore " + dbName + " per MezzoPagamentoEnum");
+        }
         return result;
     }
 }
